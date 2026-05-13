@@ -1,2 +1,19 @@
 # URL-Input-Validation-Helper
-Native HTML URL Inputs require the entered value to start with a scheme in order to be valid. This short function automatically prepends any value with a scheme. 
+Native HTML URL Inputs require any entered value to start with a scheme in order to be valid.
+
+This short function will automatically prepend any value with the relevant scheme:
+
+```js
+
+function prependURLWithScheme (e, scheme = 'https') {
+  if (e.target.getAttribute('type') === 'url') {
+    e.target.value = e.target.value.replaceAll(':', '');
+    e.target.value = e.target.value.replaceAll('//', '');
+    e.target.value = e.target.value.replaceAll(scheme, '');
+    e.target.value = `${scheme}://` + e.target.value;
+  }
+}
+
+myURLInput.addEventListener('input', prependURLWithScheme);
+
+```
