@@ -1,5 +1,5 @@
 # URL-Input-Validation-Helper
-A native HTML <input type="url"> requires any entered value to start with a scheme in order to be valid.
+A native HTML `<input type="url">` requires any entered value to start with a scheme in order to be valid.
 
 This short function will automatically prepend any value with the relevant scheme:
 
