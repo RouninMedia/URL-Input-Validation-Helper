@@ -26,9 +26,9 @@ ____________________
 ```js
 const myURLInput = document.querySelector('[type="url"]');
 
-const removeAbandonedScheme = (e, scheme = 'https') => {
+const removeDetachedScheme = (e, scheme = 'https') => {
   e.target.value = (e.target.value === `${scheme}://`) ? '' : e.target.value;
 }
 
-myURLInput.addEventListener('blur', removeAbandonedScheme);
+myURLInput.addEventListener('blur', removDetachedScheme);
 ```
